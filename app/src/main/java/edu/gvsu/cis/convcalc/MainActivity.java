@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
                 toField.getText().clear();
             }
         });
-
+setWeatherViews(View.INVISIBLE);
 //
     }
 
@@ -155,10 +155,11 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             Bundle bundle = intent.getExtras();
-            double temp = bundle.getDouble("TEMPERATURE");
-            String summary = bundle.getString("SUMMARY");
-            String icon = bundle.getString("ICON").replaceAll("-", "_");
-            String key = bundle.getString("KEY");
+            setWeatherViews(View.VISIBLE);
+            double temp = bundle.getDouble("temperature");
+            String summary = bundle.getString("summary");
+            String icon = bundle.getString("icon").replaceAll("-", "_");
+            String key = bundle.getString("key");
             int resID = getResources().getIdentifier(icon , "drawable", getPackageName());
             //setWeatherViews(View.VISIBLE);
             if (key.equals("p1"))  {

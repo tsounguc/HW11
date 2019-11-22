@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <service
-            android:name=".webservice.WeatherService"
+            android:name=".weatherservice.WeatherService"
             android:exported="false"></service>
 
         <activity

@@ -96,16 +96,16 @@ public class WeatherService extends IntentService {
 
                 // TODO: extract the values you need out of current
                 String condition = current.getString("summary");
-                String icon = current.getString("Icon");
-                double temp = current.getDouble("temparature");
+                String icon = current.getString("icon");
+                double temp = current.getDouble("temperature");
                 Intent result = new Intent(BROADCAST_WEATHER);
 //                Log.d(TAG, "fetchWeatherData: " + condition + " " + time);
 
                 // TODO: use putExtra to add the extracted values to your broadcast
-                result.putExtra("SUMMARY", condition);
-                result.putExtra("TEMPERATURE", temp);
-                result.putExtra("ICON", icon);
-                result.putExtra("KEY", key);
+                result.putExtra("summary", condition);
+                result.putExtra("temperature", temp);
+                result.putExtra("icon", icon);
+                result.putExtra("key", key);
                 LocalBroadcastManager.getInstance(this).sendBroadcast(result);
             }
         } catch (MalformedURLException e) {
